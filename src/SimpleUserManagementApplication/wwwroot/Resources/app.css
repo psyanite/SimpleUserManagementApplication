@@ -1,0 +1,41 @@
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+html, body {
+    font-family: 'Roboto';
+}
+
+@media (max-width: 959px) and (min-width: 0) {
+    .md-toolbar-tools {
+        height: 100px;
+        max-height: none;
+    }
+}
+
+md-toolbar.md-table-toolbar:not(.md-menu-toolbar).md-default .md-button.md-accent {
+    color: #fff;
+}
+
+.md-title {
+    display: inline-block;
+    margin-right: 18px;
+}
+
+.app-title {
+    font-family: 'Open Sans';
+}
+
+.md-toolbar-tools h2 {
+    font-family: 'Open Sans';
+    margin-right: 18px;
+}
+
+.layout-padding {
+    padding: 18px;
+}
+
+.md-button {  
+    text-transform: none !important;
+}
+
+

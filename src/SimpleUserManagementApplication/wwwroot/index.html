@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+  <base href="/">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple User Management Application</title>
+
+  <!-- Angular Material -->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+  <!-- Material Design Data table -->
+  <link rel="stylesheet" href="Resources/md-data-table.min.css">
+
+  <!-- App.css -->
+  <link rel="stylesheet" href="Resources/app.css">
+
+  <!-- Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+</head>
+<body ng-cloak>
+
+  <md-toolbar class="md-toolbar-tools">
+    <a href="/">
+      <div class="md-title app-title">Simple User Management Application</div>
+    </a>
+  </md-toolbar>
+
+  <md-content>
+    <md-card>
+      <ng-view></ng-view>
+    </md-card>
+  </md-content>
+
+  <!-- AngularJS-->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material -->
+  <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+
+  <!-- Material Design Data table -->
+  <script src="Resources/md-data-table.min.js"></script>
+
+  <!-- App.js -->
+  <script src="app.js"></script>
+
+</body>
+</html>

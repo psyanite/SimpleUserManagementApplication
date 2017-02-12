@@ -1,0 +1,31 @@
+﻿
+{{user=userEdit.user;""}}
+
+{{patterns=userEdit.patterns;""}}
+
+<div>
+  <md-toolbar class="md-table-toolbar md-default">
+    <div class="md-toolbar-tools">
+      <h2 class="md-title">Edit user</h2>
+      <md-button href="/user/editpassword/{{user.UserId}}" class="md-raised md-accent">Edit password</md-button>
+    </div>
+  </md-toolbar>
+
+  <md-content layout-padding>
+
+    <p>User Id: {{user.UserId}}</p>
+    <p>Username: {{user.Username}}</p>
+
+    <form name="form" novalidate ng-submit="userEdit.edit()">
+
+      <div ng-include="'/Views/Partials/form.html'"></div>
+
+      <div layout="row">
+        <md-button href="/" class="md-raised">Cancel</md-button>
+        <md-button type="submit" class="md-raised md-primary" ng-disabled="form.$invalid">Save</md-button>
+      </div>
+
+    </form>
+  </md-content>
+
+</div>

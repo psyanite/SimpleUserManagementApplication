@@ -1,0 +1,33 @@
+﻿<div layout="row" layout-xs="column">
+  <md-input-container>
+    <input name="Firstname" type="text" placeholder="Firstname" ng-model="user.Firstname" ng-required="true">
+    <div ng-messages="form.Firstname.$error" class="error-label">
+      <div ng-message="required">Your firstname is required.</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <input name="Lastname" type="text" placeholder="Lastname" ng-model="user.Lastname" ng-required="true">
+    <div ng-messages="form.Lastname.$error" class="error-label">
+      <div ng-message="required">Your lastname is required.</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <input name="DateOfBirth" type="date" placeholder="Date of birth" ng-model="user.DateOfBirth">
+  </md-input-container>
+</div>
+
+<div layout="row" layout-xs="column">
+  <md-input-container>
+    <input name="Email" type="email" placeholder="Email" ng-model="user.Email" ng-required="true" ng-pattern="patterns.emailPattern">
+    <div ng-messages="form.Email.$error" class="error-label">
+      <div ng-message="required">Your email is required.</div>
+      <div ng-message="pattern">Your email must be a valid email address.</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <input name="Phone" type="text" placeholder="Phone" ng-model="user.Phone">
+  </md-input-container>
+  <md-input-container>
+    <input name="Mobile" type="text" placeholder="Mobile" ng-model="user.Mobile">
+  </md-input-container>
+</div>

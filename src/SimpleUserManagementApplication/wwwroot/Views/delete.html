@@ -1,0 +1,54 @@
+﻿<div>
+  <md-toolbar class="md-table-toolbar md-default">
+    <div class="md-toolbar-tools">
+      <h2 class="md-title">Delete user</h2>
+    </div>
+  </md-toolbar>
+
+  <md-content layout-padding>
+
+    <div layout="row">
+      <p>Are you sure that you want to permanently delete the following user?</p>
+    </div>
+
+    <md-table-container>
+      <table md-table md-row-select multiple>
+        <thead md-head>
+          <tr md-row>
+            <th md-column>User ID</th>
+            <th md-column>Username</th>
+            <th md-column>Password</th>
+            <th md-column>Firstname</th>
+            <th md-column>Lastname</th>
+            <th md-column>Date of Birth</th>
+            <th md-column>Email</th>
+            <th md-column>Phone</th>
+            <th md-column>Mobile</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row>
+
+            {{user=userDelete.user;""}}
+
+            <td md-cell>{{user.UserId}}</td>
+            <td md-cell>{{user.Username}}</td>
+            <td md-cell>{{user.Password}}</td>
+            <td md-cell>{{user.Firstname}}</td>
+            <td md-cell>{{user.Lastname}}</td>
+            <td md-cell>{{user.DateOfBirth | date:'dd/MM/yyyy'}}</td>
+            <td md-cell>{{user.Email}}</td>
+            <td md-cell>{{user.Phone}}</td>
+            <td md-cell>{{user.Mobile}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <div layout="row">
+      <md-button href="/" class="md-raised">Cancel</md-button>
+      <md-button class="md-raised md-warn" ng-click="userDelete.remove()" ng-disabled="form.$invalid">Delete</md-button>
+    </div>
+
+  </md-content>
+</div>

@@ -1,0 +1,83 @@
+﻿<div>
+  <md-toolbar class="md-table-toolbar md-default">
+    <div class="md-toolbar-tools">
+      <h2 class="md-title">Users</h2>
+      <md-button id="create-button" href="/user/add" class="md-raised md-accent">Create a new user</md-button>
+      <md-button id="create-button" href="/user/login" class="md-raised md-accent">Check username and password</md-button>
+    </div>
+  </md-toolbar>
+
+  <md-content md-theme="dark" class="layout-padding">
+    <div>
+      <h3 class="md-title">Filter by</h3>
+      <md-button ng-click="filter = null" class="md-raised">Clear all</md-button>
+    </div>
+    <div>
+      <md-input-container>
+        <input ng-model="filter.$" placeholder="All fields">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.UserId" placeholder="User ID">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Username" placeholder="Username">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Firstname" placeholder="Firstname">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Lastname" placeholder="Lastname">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.DateOfBirth" placeholder="Date of birth">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Email" placeholder="Email">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Phone" placeholder="Phone">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="filter.Mobile" placeholder="Mobile">
+      </md-input-container>
+    </div>
+  </md-content>
+
+  <md-table-container>
+    <table md-table multiple>
+      <thead md-head>
+        <tr md-row>
+          <th md-column>User ID</th>
+          <th md-column>Username</th>
+          <th md-column>Password</th>
+          <th md-column>Firstname</th>
+          <th md-column>Lastname</th>
+          <th md-column>Date of Birth</th>
+          <th md-column>Email</th>
+          <th md-column>Phone</th>
+          <th md-column>Mobile</th>
+          <th md-column></th>
+        </tr>
+      </thead>
+      <tbody md-body>
+        <tr md-row md-select="user" md-select-id="UserId" ng-repeat="user in userList.users | orderBy: userList.query.order | filter:filter:strict | limitTo: userList.query.limit : (userList.query.page - 1) * userList.query.limit">
+          <td md-cell>{{user.UserId}}</td>
+          <td md-cell>{{user.Username}}</td>
+          <td md-cell title="{{user.Password}}">{{user.Password | limitTo: 10 }}{{user.Password.length > 10 ? '...' : ''}}</td>
+          <td md-cell>{{user.Firstname}}</td>
+          <td md-cell>{{user.Lastname}}</td>
+          <td md-cell>{{user.DateOfBirth | date:'dd/MM/yyyy'}}</td>
+          <td md-cell>{{user.Email}}</td>
+          <td md-cell>{{user.Phone}}</td>
+          <td md-cell>{{user.Mobile}}</td>
+          <td md-cell>
+            <md-button href="/user/edit/{{user.UserId}}" class="md-raised md-primary">Edit</md-button>
+            <md-button href="/user/delete/{{user.UserId}}" class="md-raised md-primary">Delete</md-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+  <md-table-pagination md-limit="userList.query.limit" md-page="userList.query.page" md-total="{{userList.users.length}}" md-limit-options="userList.limitOptions" md-page-select="true"></md-table-pagination>
+
+</div>
